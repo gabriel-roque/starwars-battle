@@ -1,0 +1,6 @@
+docker-compose.yml
+docker-data/*
+.vsls
+.idea
+.env
+.vscode/

@@ -1,0 +1,7 @@
+Dockerfile
+.dockerignore
+.git/
+.gitignore
+node_modules/
+.env.example
+hello.js
