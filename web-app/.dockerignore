@@ -4,4 +4,3 @@ Dockerfile
 .gitignore
 node_modules/
 .env.example
-hello.js
