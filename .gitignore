@@ -4,3 +4,4 @@ docker-data/*
 .idea
 .env
 .vscode/
+node_modules/

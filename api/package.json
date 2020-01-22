@@ -2,7 +2,7 @@
   "name": "adonis-api-app",
   "version": "4.1.0",
   "adonis-version": "4.1.0",
-  "description": "Adonisjs boilerplate for API server with pre-configured JWT",
+  "description": "AdonisJS API StarWars Battle App",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -12,7 +12,7 @@
     "adonisjs",
     "adonis-app"
   ],
-  "author": "",
+  "author": "gabriel-roque",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
