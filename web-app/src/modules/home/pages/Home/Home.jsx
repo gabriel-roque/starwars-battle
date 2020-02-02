@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <Grid container className={classes.page}>
       <Grid container direction="row" justify="center" alignItems="center">
-        <Grid container item justify="center" xs={10} md={8} xl={6}>
+        <Grid container item justify="center" xs={10} md={10} xl={4}>
           <img
-            src={require("assets/img/starwars-logo.png")}
+            src={require("assets/img/starwars-battle-logo.png")}
             className={classes.logo}
           />
           <Link to="/login">

@@ -11,12 +11,12 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 export default function App() {
-  const darkTheme = createMuiTheme({
+  const customTheme = createMuiTheme({
     palette: {
       type: "dark",
       primary: {
-        main: "#ffc501",
-        dark: "#65ff00"
+        main: "#8d16e7",
+        dark: "#00ff67"
       }
     }
   });
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={customTheme}>
           <RouterView />
         </ThemeProvider>
       </Router>

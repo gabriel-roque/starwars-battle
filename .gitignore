@@ -5,3 +5,4 @@ docker-data/*
 .env
 .vscode/
 node_modules/
+database/docker-data/postgres/
