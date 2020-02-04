@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 
+import Sky from "../../components/SkyStarts/SkyStarts";
+
 const useStyles = makeStyles(theme => ({
   page: {
     height: "98vh"
@@ -13,6 +15,9 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     marginTop: theme.spacing(10)
+  },
+  elements: {
+    zIndex: 10
   }
 }));
 
@@ -21,8 +26,17 @@ export default function Home() {
 
   return (
     <Grid container className={classes.page}>
+      <Sky />
       <Grid container direction="row" justify="center" alignItems="center">
-        <Grid container item justify="center" xs={10} md={10} xl={4}>
+        <Grid
+          container
+          item
+          justify="center"
+          xs={10}
+          md={8}
+          xl={4}
+          className={classes.elements}
+        >
           <img
             src={require("assets/img/starwars-battle-logo.png")}
             className={classes.logo}
