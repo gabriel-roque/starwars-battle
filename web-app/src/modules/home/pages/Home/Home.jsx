@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 
-import Sky from "../../components/SkyStarts/SkyStarts";
+import Sky from "modules/home/components/SkyStarts/SkyStarts";
 
 const useStyles = makeStyles(theme => ({
   page: {
