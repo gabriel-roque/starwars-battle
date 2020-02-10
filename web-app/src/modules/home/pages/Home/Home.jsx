@@ -8,7 +8,7 @@ import Sky from "modules/home/components/SkyStarts/SkyStarts";
 
 const useStyles = makeStyles(theme => ({
   page: {
-    height: "98vh"
+    height: "100%"
   },
   logo: {
     width: "100%"

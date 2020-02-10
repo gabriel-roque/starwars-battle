@@ -13,6 +13,15 @@
   src: local("Roboto"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.ttf");
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 body {
   background: #1f1429;
   -webkit-font-smoothing: antialiased;
