@@ -23,6 +23,15 @@ A turn-based RPG game from Star Wars with (Docker, ReactJS, AdonisJS) (Ngnix, Re
 
 ## :signal_strength: Status
 
+#### Step 01
+- [x] Home animated
+- [ ] Select your side power (light or dark)
+- [ ] Select your initial hero
+- [ ] Battle screen
+
+#### Step 02
+- [ ] Login JWT
+- [ ] Multiplayer with WebSocket
 
 
 ## :memo: Minimal Requirements
