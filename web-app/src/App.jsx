@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/css/global.css';
+import 'assets/css/global.css';
 
 import RouterView from 'routes';
 import { BrowserRouter as Router } from 'react-router-dom';
