@@ -1,29 +1,25 @@
 @font-face {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"),
-    url("../fonts/Roboto-Regular.ttf");
+  src: local('Roboto'), local('Roboto-Regular'),
+    url('../fonts/Roboto-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: local("Roboto"), local("Roboto-Bold"), url("../fonts/Roboto-Bold.ttf");
-}
-
-html,
-body {
-  height: 100%;
+  src: local('Roboto'), local('Roboto-Bold'), url('../fonts/Roboto-Bold.ttf');
 }
 
 #root {
   height: 100%;
 }
 
+html,
 body {
-  background: #1f1429;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 

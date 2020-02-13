@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import { connect } from "react-redux";
-import { exampleAction } from "modules/auth/store/actions";
+import { connect } from 'react-redux';
+import { exampleAction } from 'modules/auth/store/actions';
 
 function Login({ exampleAction }) {
   useEffect(() => {
     exampleAction();
-  }, []);
+  });
   return <h1>Login Page</h1>;
 }
 

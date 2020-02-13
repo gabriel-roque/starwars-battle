@@ -1,10 +1,10 @@
-import Home from "modules/home/pages/Home/Home";
+import Home from 'modules/home/pages/Home/home.page';
 
 const routesHome = [
   {
-    path: "/",
+    path: '/',
     component: Home,
-    name: "home.home",
+    name: 'home.home',
     public: true
   }
 ];
