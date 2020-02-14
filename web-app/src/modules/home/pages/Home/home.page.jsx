@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Grid from '@material-ui/core/Grid';
-import Fab from '@material-ui/core/Fab';
+import { ButtonBattle } from 'components/Button/button.component';
 
 import SkyLayout from 'layouts/sky/sky.layout';
 
@@ -36,7 +36,8 @@ export default function Home() {
             justify="center"
             xs={10}
             md={8}
-            xl={4}
+            lg={5}
+            xl={5}
             className={classes.elements}
           >
             <img
@@ -46,13 +47,7 @@ export default function Home() {
               className={classes.logo}
             />
             <Link to="/login">
-              <Fab
-                variant="extended"
-                color="primary"
-                className={classes.button}
-              >
-                <b>Go to battle</b>
-              </Fab>
+              <ButtonBattle />
             </Link>
           </Grid>
         </Grid>

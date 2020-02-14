@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     backgroundColor: 'transparent',
-    boxShadow: '0px',
+    boxShadow: '0px 0px',
     marginTop: theme.spacing(3)
   },
   item: {
@@ -36,6 +36,8 @@ const useStyles = makeStyles(theme => ({
 export default function NavBar() {
   const classes = useStyles();
   const history = useHistory();
+
+  // TODO fix audio music
   // const [statusMusic, setStatusMusic] = useState('');
   // const song = require('assets/media/st-rise-of-skywalker.mp3');
   // var music = new Audio(song);
