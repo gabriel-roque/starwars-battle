@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -38,32 +38,38 @@ export default function NavBar() {
   const history = useHistory();
 
   // TODO fix audio music
-  // const [statusMusic, setStatusMusic] = useState('');
+  const [statusMusic, setStatusMusic] = useState(false);
   // const song = require('assets/media/st-rise-of-skywalker.mp3');
   // var music = new Audio(song);
 
-  // useEffect(() => {
-  //   const audioBrowser = localStorage.getItem('audio');
+  useEffect(() => {
+    const audioBrowser = localStorage.getItem('audio');
 
-  //   if (audioBrowser == null) setOnMusic();
+    if (audioBrowser == null) setOnMusic();
 
-  //   if (audioBrowser === 'true') setOnMusic();
-  // }, [music]);
+    if (audioBrowser === 'true') setOnMusic();
+  }, []);
 
   function setOnMusic() {
-    // localStorage.setItem('audio', true);
-    // setStatusMusic(true);
-    // music.play();
+    localStorage.setItem('audio', true);
+    document.getElementById('music').play();
+    setStatusMusic(true);
   }
 
   function setOffMusic() {
-    // localStorage.setItem('audio', false);
-    // setStatusMusic(false);
-    // music.pause();
+    localStorage.setItem('audio', false);
+    document.getElementById('music').pause();
+    setStatusMusic(false);
   }
 
   return (
     <div className={classes.rootAppBar}>
+      <audio
+        src={require('assets/media/st-rise-of-skywalker.mp3')}
+        autoPlay={statusMusic}
+        loop
+        id="music"
+      ></audio>
       <AppBar position="fixed" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar>
@@ -85,20 +91,23 @@ export default function NavBar() {
                 <FontAwesomeIcon icon={faSignInAlt} />
               </Button>
 
-              <Button
-                color="inherit"
-                className={classes.iconButton}
-                onClick={() => setOffMusic()}
-              >
-                <FontAwesomeIcon icon={faVolumeMute} />
-              </Button>
-              <Button
-                color="inherit"
-                className={classes.iconButton}
-                onClick={() => setOnMusic()}
-              >
-                <FontAwesomeIcon icon={faVolumeUp} />
-              </Button>
+              {statusMusic === true ? (
+                <Button
+                  color="inherit"
+                  className={classes.iconButton}
+                  onClick={() => setOffMusic()}
+                >
+                  <FontAwesomeIcon icon={faVolumeMute} />
+                </Button>
+              ) : (
+                <Button
+                  color="inherit"
+                  className={classes.iconButton}
+                  onClick={() => setOnMusic()}
+                >
+                  <FontAwesomeIcon icon={faVolumeUp} />
+                </Button>
+              )}
             </div>
           </Toolbar>
         </Container>
