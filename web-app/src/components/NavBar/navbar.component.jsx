@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
@@ -33,9 +33,32 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ButtonAppBar() {
+export default function NavBar() {
   const classes = useStyles();
   const history = useHistory();
+  // const [statusMusic, setStatusMusic] = useState('');
+  // const song = require('assets/media/st-rise-of-skywalker.mp3');
+  // var music = new Audio(song);
+
+  // useEffect(() => {
+  //   const audioBrowser = localStorage.getItem('audio');
+
+  //   if (audioBrowser == null) setOnMusic();
+
+  //   if (audioBrowser === 'true') setOnMusic();
+  // }, [music]);
+
+  function setOnMusic() {
+    // localStorage.setItem('audio', true);
+    // setStatusMusic(true);
+    // music.play();
+  }
+
+  function setOffMusic() {
+    // localStorage.setItem('audio', false);
+    // setStatusMusic(false);
+    // music.pause();
+  }
 
   return (
     <div className={classes.rootAppBar}>
@@ -52,13 +75,26 @@ export default function ButtonAppBar() {
               </Button>
             </div>
             <div>
-              <Button color="inherit" className={classes.iconButton}>
+              <Button
+                color="inherit"
+                className={classes.iconButton}
+                onClick={() => history.push('/login')}
+              >
                 <FontAwesomeIcon icon={faSignInAlt} />
               </Button>
-              <Button color="inherit" className={classes.iconButton}>
+
+              <Button
+                color="inherit"
+                className={classes.iconButton}
+                onClick={() => setOffMusic()}
+              >
                 <FontAwesomeIcon icon={faVolumeMute} />
               </Button>
-              <Button color="inherit" className={classes.iconButton}>
+              <Button
+                color="inherit"
+                className={classes.iconButton}
+                onClick={() => setOnMusic()}
+              >
                 <FontAwesomeIcon icon={faVolumeUp} />
               </Button>
             </div>
