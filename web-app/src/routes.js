@@ -4,8 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 
 import routesHome from 'modules/home/routes';
 import routesAuth from 'modules/auth/routes';
+import routesCharacter from 'modules/character/routes';
 
-const routes = [...routesHome, ...routesAuth];
+const routes = [...routesHome, ...routesAuth, ...routesCharacter];
 
 export default function Routes() {
   const makeRoutes = () =>

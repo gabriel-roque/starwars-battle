@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setAudio } from 'modules/core/store/actions';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -33,14 +35,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function NavBar() {
+function NavBar({ audio, setAudio }) {
   const classes = useStyles();
   const history = useHistory();
-
-  // TODO fix audio music
-  const [statusMusic, setStatusMusic] = useState(false);
-  // const song = require('assets/media/st-rise-of-skywalker.mp3');
-  // var music = new Audio(song);
 
   useEffect(() => {
     const audioBrowser = localStorage.getItem('audio');
@@ -48,28 +45,22 @@ export default function NavBar() {
     if (audioBrowser == null) setOnMusic();
 
     if (audioBrowser === 'true') setOnMusic();
-  }, []);
+  }, [setOnMusic]);
 
   function setOnMusic() {
     localStorage.setItem('audio', true);
     document.getElementById('music').play();
-    setStatusMusic(true);
+    setAudio(true);
   }
 
   function setOffMusic() {
     localStorage.setItem('audio', false);
     document.getElementById('music').pause();
-    setStatusMusic(false);
+    setAudio(false);
   }
 
   return (
     <div className={classes.rootAppBar}>
-      <audio
-        src={require('assets/media/st-rise-of-skywalker.mp3')}
-        autoPlay={statusMusic}
-        loop
-        id="music"
-      ></audio>
       <AppBar position="fixed" className={classes.appBar}>
         <Container maxWidth="lg">
           <Toolbar>
@@ -91,7 +82,7 @@ export default function NavBar() {
                 <FontAwesomeIcon icon={faSignInAlt} />
               </Button>
 
-              {statusMusic === true ? (
+              {audio === true ? (
                 <Button
                   color="inherit"
                   className={classes.iconButton}
@@ -115,3 +106,13 @@ export default function NavBar() {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  audio: state.core.audio
+});
+
+const mapDispatchToProps = dispatch => ({
+  setAudio: status => dispatch(setAudio(status))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

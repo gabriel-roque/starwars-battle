@@ -37,7 +37,7 @@ export default function Home() {
             xs={10}
             md={8}
             lg={5}
-            xl={5}
+            xl={4}
             className={classes.elements}
           >
             <img
@@ -46,7 +46,7 @@ export default function Home() {
               draggable="false"
               className={classes.logo}
             />
-            <Link to="/login">
+            <Link to="/choose">
               <ButtonBattle />
             </Link>
           </Grid>
