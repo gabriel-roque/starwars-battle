@@ -2,11 +2,10 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import { ButtonBattle } from 'components/Button/button.component';
+import { SkyLayout } from 'layouts/sky/sky.layout';
 
 import Grid from '@material-ui/core/Grid';
-import { ButtonBattle } from 'components/Button/button.component';
-
-import SkyLayout from 'layouts/sky/sky.layout';
 
 const useStyles = makeStyles(theme => ({
   page: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Home() {
+export function Home() {
   const classes = useStyles();
 
   return (
@@ -46,7 +45,7 @@ export default function Home() {
               draggable="false"
               className={classes.logo}
             />
-            <Link to="/choose">
+            <Link to="/choose/nickname">
               <ButtonBattle />
             </Link>
           </Grid>

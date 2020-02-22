@@ -1,4 +1,4 @@
-import Home from 'modules/home/pages/Home/home.page';
+import { Home } from 'modules/home/pages/Home/home.page';
 
 const routesHome = [
   {
