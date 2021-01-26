@@ -1,9 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import core from 'modules/core/store/reducer';
-
-const reducers = combineReducers({ core });
+const reducers = combineReducers({});
 
 declare global {
   interface Window {
