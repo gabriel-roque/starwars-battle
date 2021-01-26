@@ -2,9 +2,8 @@ import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { LoadingCircle } from 'components/loading-circle/loading.componet';
-
 import { store, router as RouterView } from 'config';
+import { LoadingCircle } from 'shared';
 
 import 'assets/css/global.css';
 

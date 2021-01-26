@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { routesCharacter } from 'modules/character/character.routes';
 import { routesHome } from 'modules/home/home.routes';
 
-const routes = [...routesHome];
+const routes = [...routesHome, ...routesCharacter];
 
 export default function Routes() {
   return (
