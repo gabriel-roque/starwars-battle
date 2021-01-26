@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import { SkyLayout } from 'layouts/sky/sky.layout';
 
@@ -47,8 +47,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export function ChosseNickname() {
-  const [nick, setNick] = useState('dasdsa');
+export function ChosseNickname () {
+  // const [nick, setNick] = useState('dasdsa');
   const classes = useStyles();
 
   return (
@@ -67,7 +67,7 @@ export function ChosseNickname() {
               <input
                 type="text"
                 className={classes.input}
-                onChange={e => setNick(e.target.value)}
+              // onChange={e => setNick(e.target.value)}
               />
             </div>
           </Grid>

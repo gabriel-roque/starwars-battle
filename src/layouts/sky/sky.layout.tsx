@@ -1,13 +1,12 @@
 import React from 'react';
 
-// import NavBar from 'components/NavBar/navbar.component';
-// import Sky from 'components/SkyStars/skystars.component';
+import { SkyStars, NavBar } from 'layouts/sky/components';
 
 export function SkyLayout(props: any) {
   return (
     <>
-      {/* <Sky /> */}
-      {/* <NavBar /> */}
+      <SkyStars />
+      <NavBar />
       {props.children}
     </>
   );

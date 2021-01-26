@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.css';
+import './skystars.style.css';
 
-export default function SkyStarts() {
+export function SkyStars() {
   return (
     <>
       <div className="stars"></div>

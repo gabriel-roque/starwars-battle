@@ -1,13 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// Import new modules routes here
-import { routesHome } from 'modules/home/routes';
+import { routesHome } from 'modules/home/home.routes';
 
-// Combine new modules routes here
 const routes = [...routesHome];
 
-export default function Routes () {
+export default function Routes() {
   return (
     <>
       <Switch>

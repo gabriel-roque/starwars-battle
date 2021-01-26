@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -10,7 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 
 import { faHome, faSignInAlt, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { setAudio } from 'modules/core/store/actions';
+// import { setAudio } from 'modules/core/store/actions';
 
 const useStyles = makeStyles(theme => ({
   rootAppBar: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function NavBar({ audio, setAudio }: any) {
+export function NavBar({ audio, setAudio }: any) {
   const classes = useStyles();
   const history = useHistory();
 
