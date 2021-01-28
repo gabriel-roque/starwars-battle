@@ -10,7 +10,4 @@ export const useStyles = makeStyles(theme => ({
   button: {
     marginTop: theme.spacing(10),
   },
-  elements: {
-    zIndex: 10,
-  },
 }));

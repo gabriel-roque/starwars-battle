@@ -1,0 +1,1 @@
+export const SET_NICKNAME = '[CHARACTER] SET_NICKNAME';

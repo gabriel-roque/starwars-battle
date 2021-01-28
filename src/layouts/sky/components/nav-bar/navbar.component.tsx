@@ -38,9 +38,8 @@ export function NavBar() {
   return (
     <div className={classes.rootAppBar}>
       <AppBar position="fixed" className={classes.appBar}>
-        {/* TODO change path file after merge into master */}
         <audio
-          src="https://raw.githubusercontent.com/gabriel-roque/starwars-battle/master/web-app/src/assets/media/st-rise-of-skywalker.mp3"
+          src="https://raw.githubusercontent.com/gabriel-roque/starwars-battle/master/src/assets/media/st-rise-of-skywalker.mp3"
           autoPlay={audio}
           loop
           id="music"

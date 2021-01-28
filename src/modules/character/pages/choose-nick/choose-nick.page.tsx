@@ -1,28 +1,46 @@
 import React from 'react';
-// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { SkyLayout } from 'layouts/sky/sky.layout';
 
-import Grid from '@material-ui/core/Grid';
+import { Grid, Button, Fade } from '@material-ui/core';
 
 import { useStyles } from './choose-nick.styles';
 
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as types from 'modules/character/store/character.types';
+
 export default function ChosseNickname() {
-  // const [nick, setNick] = useState('dasdsa');
   const classes = useStyles();
+  const dispath = useDispatch();
+  const character = useSelector((state: any) => state.character.character);
 
   return (
     <SkyLayout>
       <Grid container className={classes.page}>
-        <Grid container direction="row" alignItems="center" justify="center" className={classes.elements}>
+        <Grid container direction="row" alignItems="center" justify="center">
           <Grid item container xs={8} justify="center">
             <div className={classes.areaNickname}>
               <span className={classes.title}>Enter the nickname</span>
               <input
                 type="text"
                 className={classes.input}
-                // onChange={e => setNick(e.target.value)}
+                onChange={e => dispath({ type: types.SET_NICKNAME, data: e.target.value })}
               />
+              <Fade in={character.nick.length >= 3} timeout={800}>
+                <Link to="/character/choose/gamemode">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<FontAwesomeIcon icon={faArrowRight} />}
+                    className={classes.button}
+                  >
+                    <b>Next</b>
+                  </Button>
+                </Link>
+              </Fade>
             </div>
           </Grid>
         </Grid>

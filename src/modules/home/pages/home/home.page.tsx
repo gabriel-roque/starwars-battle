@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { SkyLayout } from 'layouts/sky/sky.layout';
+import { SkyLayout } from 'layouts';
 
 import StarWarsBattleLogo from 'assets/img/starwars-battle-logo.png';
 
@@ -18,7 +18,7 @@ export default function Home() {
     <SkyLayout>
       <Grid container className={classes.page}>
         <Grid container direction="row" justify="center" alignItems="center">
-          <Grid container item justify="center" xs={10} md={8} lg={5} xl={4} className={classes.elements}>
+          <Grid container item justify="center" xs={10} md={8} lg={5} xl={4}>
             <img src={StarWarsBattleLogo} alt="starwars battle logo" draggable="false" className={classes.logo} />
             <Link to="/character/choose/nickname">
               <ButtonBattle />
