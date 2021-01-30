@@ -41,6 +41,9 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ]
   }
 }
