@@ -6,13 +6,13 @@ import { SkyLayout } from 'layouts';
 
 import { Grid } from '@material-ui/core';
 
-import { useStyles } from './choose-gamemode.styles';
+import { useStyles } from './choose-side.styles';
 
-import { GAMEMODES } from 'enums/character.enum';
-import { CardMultiplayer, CardSingleplayer } from 'modules/character/components';
+import { SIDES } from 'enums/character.enum';
+import { LightSide, DarkSide } from 'modules/character/components';
 import * as types from 'modules/character/store/character.types';
 
-export default function ChooseGamemodePage() {
+export default function ChooseSidePage() {
   const classes = useStyles();
   const dispath = useDispatch();
 
@@ -20,23 +20,25 @@ export default function ChooseGamemodePage() {
     <SkyLayout>
       <Grid container justify="center" alignContent="center" className={classes.page}>
         <Grid container item justify="center" alignContent="flex-end">
-          <h1 className={classes.title}>Select the gamemode</h1>
+          <h1 className={classes.title}>Select your side</h1>
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
-          <Grid container item md={5} lg={5} xl={4}>
+          <Grid container item md={5} lg={4}>
             <Link
-              to="/character/choose/side"
-              onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.MULTIPLAYER })}
+              className={classes.link}
+              to="/character/choose"
+              onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.LIGHT })}
             >
-              <CardMultiplayer />
+              <LightSide />
             </Link>
           </Grid>
-          <Grid container item md={5} lg={5} xl={4}>
+          <Grid container item md={5} lg={4}>
             <Link
-              to="/character/choose/side"
-              onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.IA })}
+              className={classes.link}
+              to="/character/choose"
+              onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.DARK })}
             >
-              <CardSingleplayer />
+              <DarkSide />
             </Link>
           </Grid>
         </Grid>

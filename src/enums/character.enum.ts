@@ -1,0 +1,18 @@
+export const GAMEMODES = {
+  IA: 'IA',
+  MULTIPLAYER: 'MP',
+};
+
+export const SIDES = {
+  LIGHT: 'LIGHT',
+  DARK: 'DARK',
+};
+
+export const CHARACTERS = {
+  KYLO_REN: 'KYLO_REN',
+  DARTH_VADER: 'DARTH_VADER',
+  DARTH_MAUL: 'DARTH_MAUL',
+  REY_SKYWALKER: 'REY_SKYWALKER',
+  LUKE_SKYWALKER: 'LUKE_SKYWALKER',
+  YODA: 'YODA',
+};

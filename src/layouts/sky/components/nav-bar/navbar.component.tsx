@@ -1,49 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { AppBar, Button, Container, Toolbar } from '@material-ui/core';
 
 import { useStyles } from './navbar.styles';
 
-import { faHome, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function NavBar() {
   const classes = useStyles();
   const history = useHistory();
-  const [audio, setAudio] = useState<any>();
+  // const [audio, setAudio] = useState<any>();
 
-  useEffect(() => {
-    const audioBrowser = localStorage.getItem('audio');
+  // useEffect(() => {
+  //   const audioBrowser = localStorage.getItem('audio');
 
-    if (audioBrowser == null) setOnMusic();
+  //   if (audioBrowser == null) setOnMusic();
 
-    if (audioBrowser === 'true') setOnMusic();
-  }, [setOnMusic]);
+  //   if (audioBrowser === 'true') setOnMusic();
+  // }, [setOnMusic]);
 
-  function setOnMusic() {
-    setAudio(true);
-    localStorage.setItem('audio', 'true');
-    const media = document.getElementById('music') as HTMLAudioElement;
-    media.play();
-  }
+  // function setOnMusic() {
+  //   setAudio(true);
+  //   localStorage.setItem('audio', 'true');
+  //   const media = document.getElementById('music') as HTMLAudioElement;
+  //   media.play();
+  // }
 
-  function setOffMusic() {
-    setAudio(false);
-    localStorage.setItem('audio', 'false');
-    const media = document.getElementById('music') as HTMLAudioElement;
-    media.pause();
-  }
+  // function setOffMusic() {
+  //   setAudio(false);
+  //   localStorage.setItem('audio', 'false');
+  //   const media = document.getElementById('music') as HTMLAudioElement;
+  //   media.pause();
+  // }
 
   return (
     <div className={classes.rootAppBar}>
       <AppBar position="fixed" className={classes.appBar}>
-        <audio
+        {/* <audio
           src="https://raw.githubusercontent.com/gabriel-roque/starwars-battle/master/src/assets/media/st-rise-of-skywalker.mp3"
           autoPlay={audio}
           loop
           id="music"
-        />
+        /> */}
         <Container maxWidth="lg">
           <Toolbar>
             <div className={classes.item}>
@@ -52,7 +52,7 @@ export function NavBar() {
               </Button>
             </div>
             <div>
-              {audio === true ? (
+              {/* {audio === true ? (
                 <Button color="inherit" className={classes.iconButton} onClick={() => setOffMusic()}>
                   <FontAwesomeIcon icon={faVolumeMute} />
                 </Button>
@@ -60,7 +60,7 @@ export function NavBar() {
                 <Button color="inherit" className={classes.iconButton} onClick={() => setOnMusic()}>
                   <FontAwesomeIcon icon={faVolumeUp} />
                 </Button>
-              )}
+              )} */}
             </div>
           </Toolbar>
         </Container>
