@@ -26,7 +26,7 @@ export default function ChooseSidePage() {
           <Grid container item md={5} lg={4}>
             <Link
               className={classes.link}
-              to="/character/choose"
+              to="/character/choose/player"
               onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.LIGHT })}
             >
               <LightSide />
@@ -35,7 +35,7 @@ export default function ChooseSidePage() {
           <Grid container item md={5} lg={4}>
             <Link
               className={classes.link}
-              to="/character/choose"
+              to="/character/choose/player"
               onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.DARK })}
             >
               <DarkSide />

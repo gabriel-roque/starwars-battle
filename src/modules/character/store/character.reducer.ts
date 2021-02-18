@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, character: { ...state.character, gamemode: action.data } };
     case types.SET_SIDE:
       return { ...state, character: { ...state.character, side: action.data } };
+    case types.SET_PLAYER:
+      return { ...state, character: { ...state.character, player: action.data } };
     default:
       return state;
   }

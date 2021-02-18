@@ -3,6 +3,6 @@ export const INITIAL_STATE = {
     nick: '',
     gamemode: '',
     side: '',
-    character: '',
+    player: '',
   },
 };

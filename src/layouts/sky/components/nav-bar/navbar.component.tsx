@@ -5,7 +5,7 @@ import { AppBar, Button, Container, Toolbar } from '@material-ui/core';
 
 import { useStyles } from './navbar.styles';
 
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function NavBar() {
@@ -47,6 +47,11 @@ export function NavBar() {
         <Container maxWidth="lg">
           <Toolbar>
             <div className={classes.item}>
+              {history.location.pathname !== '/' && (
+                <Button color="inherit" className={classes.iconButton} onClick={() => history.goBack()}>
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </Button>
+              )}
               <Button color="inherit" className={classes.iconButton} onClick={() => history.push('/')}>
                 <FontAwesomeIcon icon={faHome} />
               </Button>
