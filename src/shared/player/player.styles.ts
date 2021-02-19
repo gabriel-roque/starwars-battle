@@ -9,21 +9,29 @@ export const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: 150,
     border: '5px solid white',
     backgroundSize: 'cover !important',
-    background: (props: any) =>
-      `linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, ${props.color} 150%), url(${props.img}) center;`,
+    background: (props?: any) =>
+      `linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, ${props?.color} 150%), url(${props?.img}) center;`,
     transition: '0.8s',
     '&:hover': {
-      cursor: 'pointer',
+      cursor: (props?: any) => (props.noPointer ? '' : 'pointer'),
       outline: 'none',
       padding: theme.spacing(2),
-      boxShadow: (props: any) => `0px 0px 15px 5px ${props.color}`,
+      boxShadow: (props?: any) => `0px 0px 15px 5px ${props?.color}`,
     },
   },
-  title: {
-    margin: 20,
+  label: {
     padding: 10,
     borderRadius: 10,
     fontSize: 20,
+    color: 'white',
+    width: 150,
+    textAlign: 'center',
+    backgroundColor: palletColors.cyan,
+  },
+  nick: {
+    padding: '5px 15px',
+    borderRadius: '10px 10px 0 0',
+    fontSize: 11,
     color: 'white',
     backgroundColor: palletColors.cyan,
   },

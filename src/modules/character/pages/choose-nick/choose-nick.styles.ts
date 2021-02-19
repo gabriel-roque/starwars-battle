@@ -24,6 +24,7 @@ export const useStyles = makeStyles(theme => ({
     maxWidth: '400px',
     maxHeight: '30px',
     textAlign: 'center',
+    textTransform: 'lowercase',
     fontSize: '20px',
     marginTop: theme.spacing(2),
     padding: theme.spacing(1),
@@ -49,5 +50,9 @@ export const useStyles = makeStyles(theme => ({
       transition: '0.4s !important',
       backgroundColor: palletColors.green,
     },
+  },
+  alert: {
+    marginTop: 20,
+    color: palletColors.red,
   },
 }));

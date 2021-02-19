@@ -6,6 +6,8 @@ import { SkyLayout } from 'layouts/sky/sky.layout';
 
 import { Grid, Button, Fade } from '@material-ui/core';
 
+import { parserNickname } from 'utils';
+
 import { useStyles } from './choose-nick.styles';
 
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -26,10 +28,22 @@ export default function ChosseNickname() {
               <span className={classes.title}>Enter the nickname</span>
               <input
                 type="text"
+                defaultValue={character?.nick || ''}
+                value={character?.nick}
                 className={classes.input}
-                onChange={e => dispath({ type: types.SET_NICKNAME, data: e.target.value })}
+                onChange={e =>
+                  dispath({
+                    type: types.SET_NICKNAME,
+                    data: parserNickname(e.target.value),
+                  })
+                }
               />
-              <Fade in={character.nick.length >= 3} timeout={800}>
+              {character?.nick?.length > 15 && (
+                <Fade in={character?.nick?.length > 15} timeout={800}>
+                  <span className={classes.alert}>max length 15</span>
+                </Fade>
+              )}
+              <Fade in={character?.nick?.length >= 3 && character?.nick?.length <= 15} timeout={800}>
                 <Link to="/character/choose/gamemode">
                   <Button
                     variant="contained"
