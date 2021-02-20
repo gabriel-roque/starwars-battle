@@ -7,7 +7,7 @@ import { Grid } from '@material-ui/core';
 
 import { useStyles } from './arena.styles';
 
-import { Player } from 'shared';
+import { Player, Shield, Bar } from 'shared';
 
 export default function ArenaPage() {
   const classes = useStyles();
@@ -21,7 +21,14 @@ export default function ArenaPage() {
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           <Grid container item justify="center" xs={3}>
+            <Grid container item xs={10}>
+              <Shield counter={8} />
+            </Grid>
             <Player player={character?.player} nick={character.nick} noPointer />
+            <Grid container item xs={10}>
+              <Bar type="life" counter={88} />
+              <Bar type="power" counter={25} />
+            </Grid>
           </Grid>
           <Grid container item justify="center" xs={3}>
             <h3 style={{ color: 'red' }}>place</h3>

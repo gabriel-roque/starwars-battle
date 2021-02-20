@@ -4,5 +4,6 @@ export const palletColors = {
   red: '#CE0000',
   blue: '#0090CE',
   yellow: '#FFF505',
+  yellowDark: '#FFC805',
   cyan: '#3C3C3C',
 };

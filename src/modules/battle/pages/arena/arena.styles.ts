@@ -7,4 +7,7 @@ export const useStyles = makeStyles(() => ({
   title: {
     color: 'white',
   },
+  bar: {
+    backgroundColor: '#1a90ff',
+  },
 }));
