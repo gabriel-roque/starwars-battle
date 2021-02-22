@@ -10,4 +10,7 @@ export const useStyles = makeStyles(() => ({
   bar: {
     backgroundColor: '#1a90ff',
   },
+  actionArea: {
+    marginTop: 60,
+  },
 }));
