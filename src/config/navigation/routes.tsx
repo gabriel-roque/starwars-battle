@@ -1,13 +1,13 @@
-import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import { routesBattle } from 'modules/battle/battle.routes'
-import { routesCharacter } from 'modules/character/character.routes'
-import { routesHome } from 'modules/home/home.routes'
+import { routesBattle } from 'modules/battle/battle.routes';
+import { routesHome } from 'modules/home/home.routes';
+import { routesPlayer } from 'modules/player/player.routes';
 
-const routes = [...routesHome, ...routesCharacter, ...routesBattle]
+const routes = [...routesHome, ...routesPlayer, ...routesBattle];
 
-export default function Routes () {
+export default function Routes() {
   return (
     <>
       <Switch>
@@ -16,5 +16,5 @@ export default function Routes () {
         ))}
       </Switch>
     </>
-  )
+  );
 }

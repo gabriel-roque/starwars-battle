@@ -12,12 +12,12 @@ import { useStyles } from './choose-nick.styles';
 
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as types from 'modules/character/store/character.types';
+import * as types from 'modules/player/store/player.types';
 
 export default function ChosseNickname() {
   const classes = useStyles();
   const dispath = useDispatch();
-  const character = useSelector((state: any) => state.character.character);
+  const player = useSelector((state: any) => state.player);
 
   return (
     <SkyLayout>
@@ -28,8 +28,8 @@ export default function ChosseNickname() {
               <span className={classes.title}>Enter the nickname</span>
               <input
                 type="text"
-                defaultValue={character?.nick || ''}
-                value={character?.nick}
+                defaultValue={player?.nick || ''}
+                value={player?.nick}
                 className={classes.input}
                 onChange={e =>
                   dispath({
@@ -38,13 +38,13 @@ export default function ChosseNickname() {
                   })
                 }
               />
-              {character?.nick?.length > 15 && (
-                <Fade in={character?.nick?.length > 15} timeout={800}>
+              {player?.nick?.length > 15 && (
+                <Fade in={player?.nick?.length > 15} timeout={800}>
                   <span className={classes.alert}>max length 15</span>
                 </Fade>
               )}
-              <Fade in={character?.nick?.length >= 3 && character?.nick?.length <= 15} timeout={800}>
-                <Link to="/character/choose/gamemode">
+              <Fade in={player?.nick?.length >= 3 && player?.nick?.length <= 15} timeout={800}>
+                <Link to="/player/choose/gamemode">
                   <Button
                     variant="contained"
                     color="primary"

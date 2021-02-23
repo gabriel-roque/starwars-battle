@@ -20,7 +20,7 @@ export default function Home() {
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid container item justify="center" xs={10} md={8} lg={5} xl={4}>
             <img src={StarWarsBattleLogo} alt="starwars battle logo" draggable="false" className={classes.logo} />
-            <Link to="/character/choose/nickname">
+            <Link to="/player/choose/nickname">
               <ButtonBattle />
             </Link>
           </Grid>

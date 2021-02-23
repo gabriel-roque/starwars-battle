@@ -17,7 +17,7 @@ export const SIDES = {
   DARK: 'DARK',
 };
 
-export const PLAYERS = {
+export const CHARACTERS = {
   dark: [
     {
       name: 'Kylo Ren',

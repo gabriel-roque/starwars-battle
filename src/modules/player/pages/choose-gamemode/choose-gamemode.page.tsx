@@ -9,8 +9,8 @@ import { Grid } from '@material-ui/core';
 import { useStyles } from './choose-gamemode.styles';
 
 import { GAMEMODES } from 'enums/character.enum';
-import { CardMultiplayer, CardSingleplayer } from 'modules/character/components';
-import * as types from 'modules/character/store/character.types';
+import { CardMultiplayer, CardSingleplayer } from 'modules/player/components';
+import * as types from 'modules/player/store/player.types';
 
 export default function ChooseGamemodePage() {
   const classes = useStyles();
@@ -25,17 +25,14 @@ export default function ChooseGamemodePage() {
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           <Grid container item md={5} lg={5} xl={4}>
             <Link
-              to="/character/choose/side"
+              to="/player/choose/side"
               onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.MULTIPLAYER })}
             >
               <CardMultiplayer />
             </Link>
           </Grid>
           <Grid container item md={5} lg={5} xl={4}>
-            <Link
-              to="/character/choose/side"
-              onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.IA })}
-            >
+            <Link to="/player/choose/side" onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.IA })}>
               <CardSingleplayer />
             </Link>
           </Grid>

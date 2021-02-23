@@ -5,7 +5,7 @@ import { SkyStars, NavBar } from 'layouts/sky/components';
 
 import { getSessionPlayer } from 'utils';
 
-import * as types from 'modules/character/store/character.types';
+import * as types from 'modules/player/store/player.types';
 
 export function SkyLayout(props: any) {
   const dispath = useDispatch();

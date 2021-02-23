@@ -1,0 +1,1 @@
+export type {Character,Player} from './character.interfaces'

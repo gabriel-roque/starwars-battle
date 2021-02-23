@@ -1,0 +1,5 @@
+export const SET_NICKNAME = '[PLAYER] SET_NICKNAME';
+export const SET_GAME_MODE = '[PLAYER] SET_GAME_MODE';
+export const SET_SIDE = '[PLAYER] SET_SIDE';
+export const SET_CHARACTER = '[PLAYER] SET_CHARACTER';
+export const RESTORE_SESSION = '[PLAYER] RESTORE_SESSION';

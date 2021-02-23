@@ -9,8 +9,8 @@ import { Grid } from '@material-ui/core';
 import { useStyles } from './choose-side.styles';
 
 import { SIDES } from 'enums/character.enum';
-import { LightSide, DarkSide } from 'modules/character/components';
-import * as types from 'modules/character/store/character.types';
+import { LightSide, DarkSide } from 'modules/player/components';
+import * as types from 'modules/player/store/player.types';
 
 export default function ChooseSidePage() {
   const classes = useStyles();
@@ -26,7 +26,7 @@ export default function ChooseSidePage() {
           <Grid container item md={5} lg={4}>
             <Link
               className={classes.link}
-              to="/character/choose/player"
+              to="/player/choose"
               onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.LIGHT })}
             >
               <LightSide />
@@ -35,7 +35,7 @@ export default function ChooseSidePage() {
           <Grid container item md={5} lg={4}>
             <Link
               className={classes.link}
-              to="/character/choose/player"
+              to="/player/choose"
               onClick={() => dispath({ type: types.SET_SIDE, data: SIDES.DARK })}
             >
               <DarkSide />

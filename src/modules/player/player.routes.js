@@ -3,31 +3,31 @@ import { lazy } from 'react'
 const ChosseNicknamePage = lazy(() => import('./pages/choose-nick/choose-nick.page'))
 const ChosseGamemodePage = lazy(() => import('./pages/choose-gamemode/choose-gamemode.page'))
 const ChosseSidePage = lazy(() => import('./pages/choose-side/choose-side.page'))
-const ChossePlayerPage = lazy(() => import('./pages/choose-player/choose-player.page'))
+const ChosseCharacterPage = lazy(() => import('./pages/choose-character/choose-character.page'))
 
-export const routesCharacter = [
+export const routesPlayer = [
   {
-    path: '/character/choose/nickname',
+    path: '/player/choose/nickname',
     component: ChosseNicknamePage,
-    name: 'character.nickname',
+    name: 'player.nickname',
     public: false
   },
   {
-    path: '/character/choose/gamemode',
+    path: '/player/choose/gamemode',
     component: ChosseGamemodePage,
-    name: 'character.gamemode',
+    name: 'player.gamemode',
     public: false
   },
   {
-    path: '/character/choose/side',
+    path: '/player/choose/side',
     component: ChosseSidePage,
-    name: 'character.side',
+    name: 'player.side',
     public: false
   },
   {
-    path: '/character/choose/player',
-    component: ChossePlayerPage,
-    name: 'character.player',
+    path: '/player/choose',
+    component: ChosseCharacterPage,
+    name: 'player.character',
     public: false
   },
 ];
