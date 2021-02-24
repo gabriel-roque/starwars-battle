@@ -24,12 +24,12 @@ export default function ChooseGamemodePage() {
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           <Grid container item md={5} lg={5} xl={4}>
-            <Link
+            {/* <Link
               to="/player/choose/side"
               onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.MULTIPLAYER })}
-            >
-              <CardMultiplayer />
-            </Link>
+            > */}
+            <CardMultiplayer />
+            {/* </Link> */}
           </Grid>
           <Grid container item md={5} lg={5} xl={4}>
             <Link to="/player/choose/side" onClick={() => dispath({ type: types.SET_GAME_MODE, data: GAMEMODES.IA })}>
