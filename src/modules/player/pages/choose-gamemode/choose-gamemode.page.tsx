@@ -8,7 +8,7 @@ import { Grid } from '@material-ui/core';
 
 import { useStyles } from './choose-gamemode.styles';
 
-import { GAMEMODES } from 'enums/character.enum';
+import { GAMEMODES } from 'enums';
 import { CardMultiplayer, CardSingleplayer } from 'modules/player/components';
 import * as types from 'modules/player/store/player.types';
 

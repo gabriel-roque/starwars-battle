@@ -1,7 +1,7 @@
 export interface IPlayer {
   nick: string;
   gamemode: 'IA' | 'MP' | string;
-  side: 'LIGHT' | 'DARK' | string;
+  side: ISides;
   status: {
     life: number;
     power: number;
@@ -9,10 +9,13 @@ export interface IPlayer {
   character: ICharacter;
 }
 
+export type ISides = 'LIGHT' | 'DARK' | string;
+
 export interface ICharacter {
   name: string;
   color: string;
   img: string;
+  side: ISides;
 }
 
 export interface ICharactersEnum {

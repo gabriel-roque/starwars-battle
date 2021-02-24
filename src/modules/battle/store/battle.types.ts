@@ -1,0 +1,1 @@
+export const INIT_BATTLE = '[BATTLE] INIT_BATTLE';

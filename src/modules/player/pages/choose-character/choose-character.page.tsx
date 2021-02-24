@@ -8,7 +8,7 @@ import { Grid } from '@material-ui/core';
 
 import { useStyles } from './choose-character.styles';
 
-import { CHARACTERS, SIDES } from 'enums/character.enum';
+import { CHARACTERS, SIDES } from 'enums';
 import * as types from 'modules/player/store/player.types';
 import { Character } from 'shared';
 

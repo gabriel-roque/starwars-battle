@@ -1,9 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
+import battle from 'modules/battle/store/battle.reducer';
 import player from 'modules/player/store/player.reducer';
 
-const reducers = combineReducers({ player });
+const reducers = combineReducers({ player, battle });
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;

@@ -1,33 +1,35 @@
 import { faHandRock, faTimes, faShieldAlt, faAngleDoubleUp, faBolt } from '@fortawesome/free-solid-svg-icons';
 import { palletColors } from 'config';
+import { ACTIONS } from 'enums/battle.enum';
+import { IIcon } from 'interfaces';
 
-export function mountIcon(type: string) {
+export function mountIcon(type: string): IIcon {
   switch (type) {
-    case 'attack': {
+    case ACTIONS.ATTACK: {
       return {
         icon: faHandRock,
-        label: 'attack',
+        label: ACTIONS.ATTACK,
         color: palletColors.blueDark,
       };
     }
-    case 'defeat': {
+    case ACTIONS.DEFEAT: {
       return {
         icon: faShieldAlt,
-        label: 'defeat',
+        label: ACTIONS.DEFEAT,
         color: palletColors.yellowDark,
       };
     }
-    case 'charger': {
+    case ACTIONS.CHARGER: {
       return {
         icon: faAngleDoubleUp,
-        label: 'charger',
+        label: ACTIONS.CHARGER,
         color: palletColors.greenNeon,
       };
     }
-    case 'power': {
+    case ACTIONS.POWER: {
       return {
         icon: faBolt,
-        label: 'power',
+        label: ACTIONS.POWER,
         color: palletColors.purple,
       };
     }

@@ -12,5 +12,6 @@ export const INITIAL_STATE: IPlayer = {
     name: '',
     color: '',
     img: '',
+    side: '',
   },
 };

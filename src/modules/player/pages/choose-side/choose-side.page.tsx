@@ -8,7 +8,7 @@ import { Grid } from '@material-ui/core';
 
 import { useStyles } from './choose-side.styles';
 
-import { SIDES } from 'enums/character.enum';
+import { SIDES } from 'enums';
 import { LightSide, DarkSide } from 'modules/player/components';
 import * as types from 'modules/player/store/player.types';
 
