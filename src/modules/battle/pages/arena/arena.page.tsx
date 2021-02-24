@@ -8,11 +8,11 @@ import { Grid } from '@material-ui/core';
 import { useStyles } from './arena.styles';
 
 import { BattleHistory } from 'modules/battle/components';
-import { Player, Shield, Bar, IconAction } from 'shared';
+import { Character, Shield, Bar, IconAction } from 'shared';
 
 export default function ArenaPage() {
   const classes = useStyles();
-  const character = useSelector((state: any) => state.character);
+  const player = useSelector((state: any) => state.player);
 
   return (
     <SkyLayout>
@@ -25,7 +25,7 @@ export default function ArenaPage() {
             <Grid container item xs={10}>
               <Shield counter={8} />
             </Grid>
-            <Player player={character?.player} nick={character.nick} noPointer />
+            <Character character={player?.character} player={player} noPointer />
             <Grid container item xs={10}>
               <Bar type="life" counter={88} />
               <Bar type="power" counter={25} />

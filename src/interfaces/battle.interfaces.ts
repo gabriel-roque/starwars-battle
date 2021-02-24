@@ -1,13 +1,13 @@
-import { Player } from 'interfaces';
+import { IPlayer } from 'interfaces';
 
-export interface Battle {
-  playerA: Player;
-  playerB: Player;
-  history: Array<History>;
+export interface IBattle {
+  playerA: IPlayer;
+  playerB: IPlayer;
+  history: Array<IHistory>;
   turn: 'PLAYER_A' | 'PLAYER_B' | string;
 }
 
-export interface History {
-  player: Player;
+export interface IHistory {
+  player: IPlayer;
   event: any;
 }

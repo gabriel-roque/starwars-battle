@@ -1,1 +1,1 @@
-export type {Character,Player} from './character.interfaces'
+export type { ICharacter, IPlayer, ICharactersEnum } from './character.interfaces'

@@ -6,6 +6,7 @@ import DarthVader from 'assets/img/chars/vader-icon.png';
 import Yoda from 'assets/img/chars/yoda-icon.png';
 
 import { palletColors } from 'config';
+import { ICharactersEnum } from 'interfaces';
 
 export const GAMEMODES = {
   IA: 'IA',
@@ -17,7 +18,7 @@ export const SIDES = {
   DARK: 'DARK',
 };
 
-export const CHARACTERS = {
+export const CHARACTERS: ICharactersEnum = {
   dark: [
     {
       name: 'Kylo Ren',

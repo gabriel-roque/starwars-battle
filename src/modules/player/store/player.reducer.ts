@@ -15,8 +15,8 @@ export default (state = INITIAL_STATE, action) => {
       setSessionPlayer({ ...state, side: action.data });
       return { ...state, side: action.data };
     case types.SET_CHARACTER:
-      setSessionPlayer({ ...state, player: action.data });
-      return { ...state, player: action.data };
+      setSessionPlayer({ ...state, character: action.data });
+      return { ...state, character: action.data };
     case types.RESTORE_SESSION:
       return { ...state, ...action.data };
     default:
