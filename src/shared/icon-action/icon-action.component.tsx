@@ -7,10 +7,11 @@ import { mountIcon } from 'utils';
 import { useStyles } from './icon-action.styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IAction } from 'interfaces';
 
 interface Props {
   onClick?: Function;
-  type: 'attack' | 'defeat' | 'charger' | 'power';
+  type: IAction;
 }
 
 export function IconAction(props: Props) {

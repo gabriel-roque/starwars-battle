@@ -24,7 +24,7 @@ export const CHARACTERS: ICharactersEnum = {
       side: SIDES.DARK,
     },
     {
-      name: 'Kylo Ren',
+      name: 'Darth Maul',
       color: palletColors.red,
       img: DarthMaul,
       side: SIDES.DARK,

@@ -5,6 +5,7 @@ export interface IPlayer {
   status: {
     life: number;
     power: number;
+    shield: number;
   };
   character: ICharacter;
 }
