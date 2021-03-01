@@ -1,5 +1,5 @@
-import { GAMEMODES, CHARACTERS } from 'enums';
-import { IPlayer, ICharacter, IBattle, IAction } from 'interfaces';
+import { GAMEMODES, CHARACTERS, ACTIONS } from 'enums';
+import { IPlayer, ICharacter, IBattle, IActionLabel } from 'interfaces';
 
 export function mounteBattle(gamemode: string, player: IPlayer): IBattle | void {
   if (gamemode === GAMEMODES.IA) {
@@ -14,7 +14,7 @@ export function mounteBattle(gamemode: string, player: IPlayer): IBattle | void 
         character: adversary,
       },
       history: [],
-      turn: 'PLAYER_A',
+      turn: 'playerA',
     };
   }
 }
@@ -31,8 +31,32 @@ function random(min: number, max: number): number {
   return min + Math.floor((max - min) * Math.random());
 }
 
-export function turn(battle: IBattle, action: IAction) {
-  battle.playerA.status.life = random(0, 100);
-  battle.playerB.status.life = random(0, 100);
+function checkShield(shield: number, hit: number) {
+  return shield - hit < 0 ? 0 : shield - hit;
+}
+
+function apllyAttack(receivingPlayer: IPlayer) {
+  const ATTACK = random(2, 8);
+  const SHIELD = checkShield(receivingPlayer.status.shield, ATTACK);
+  receivingPlayer.status.life = receivingPlayer.status.life - (ATTACK - receivingPlayer.status.shield);
+  receivingPlayer.status.shield = SHIELD;
+  return receivingPlayer;
+}
+
+export function turn(battle: IBattle, action: IActionLabel) {
+  const { playerA, playerB } = battle;
+
+  switch (action) {
+    case ACTIONS.ATTACK: {
+      if (battle.turn === 'playerA') {
+        battle.playerB = apllyAttack(playerB);
+        battle.turn = 'playerB';
+      } else {
+        battle.playerA = apllyAttack(playerA);
+        battle.turn = 'playerA';
+      }
+      break;
+    }
+  }
   return battle;
 }

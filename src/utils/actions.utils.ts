@@ -1,9 +1,9 @@
 import { faHandRock, faTimes, faShieldAlt, faAngleDoubleUp, faBolt } from '@fortawesome/free-solid-svg-icons';
 import { palletColors } from 'config';
 import { ACTIONS } from 'enums/battle.enum';
-import { IIcon } from 'interfaces';
+import { IAction } from 'interfaces';
 
-export function mountIcon(type: string): IIcon {
+export function mountIcon(type: string): IAction {
   switch (type) {
     case ACTIONS.ATTACK: {
       return {

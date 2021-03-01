@@ -5,18 +5,19 @@ export interface IBattle {
   playerA: IPlayer;
   playerB: IPlayer;
   history?: Array<IHistory>;
-  turn?: 'PLAYER_A' | 'PLAYER_B' | string;
+  turn?: 'playerA' | 'playerB' | string;
 }
 
 export interface IHistory {
   player: IPlayer;
-  event: any;
+  action: IAction;
 }
 
-export type IAction = 'attack' | 'defeat' | 'charger' | 'power' | string;
+export type IActionLabel = 'attack' | 'defeat' | 'charger' | 'power' | string;
 
-export interface IIcon {
+export interface IAction {
   icon: IconDefinition;
-  label: string;
+  label: IActionLabel;
   color: string;
+  value?: number;
 }
