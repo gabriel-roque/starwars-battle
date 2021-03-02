@@ -1,7 +1,9 @@
-import { GAMEMODES, CHARACTERS, ACTIONS } from 'enums';
-import { IPlayer, ICharacter, IBattle, IActionLabel } from 'interfaces';
+import { mountIcon } from 'utils';
 
-export function mounteBattle(gamemode: string, player: IPlayer): IBattle | void {
+import { GAMEMODES, CHARACTERS, ACTIONS } from 'enums';
+import { IPlayer, ICharacter, IBattle, IActionLabel, IAction } from 'interfaces';
+
+export function mountBattle(gamemode: string, player: IPlayer): IBattle | void {
   if (gamemode === GAMEMODES.IA) {
     const adversary = shuffleAdversary(player);
     return {
@@ -40,7 +42,11 @@ function apllyAttack(receivingPlayer: IPlayer) {
   const SHIELD = checkShield(receivingPlayer.status.shield, ATTACK);
   receivingPlayer.status.life = receivingPlayer.status.life - (ATTACK - receivingPlayer.status.shield);
   receivingPlayer.status.shield = SHIELD;
-  return receivingPlayer;
+  return { receivingPlayer, value: ATTACK };
+}
+
+function mountAction(action: IActionLabel, value: number): IAction {
+  return { ...mountIcon(action), value };
 }
 
 export function turn(battle: IBattle, action: IActionLabel) {
@@ -49,10 +55,14 @@ export function turn(battle: IBattle, action: IActionLabel) {
   switch (action) {
     case ACTIONS.ATTACK: {
       if (battle.turn === 'playerA') {
-        battle.playerB = apllyAttack(playerB);
+        const { receivingPlayer, value } = apllyAttack(playerB);
+        battle.playerB = receivingPlayer;
         battle.turn = 'playerB';
+        battle.history?.push({ player: battle.playerA, action: mountAction(action, value) });
       } else {
-        battle.playerA = apllyAttack(playerA);
+        const { receivingPlayer, value } = apllyAttack(playerA);
+        battle.playerA = receivingPlayer;
+        battle.history?.push({ player: battle.playerB, action: mountAction(action, value) });
         battle.turn = 'playerA';
       }
       break;

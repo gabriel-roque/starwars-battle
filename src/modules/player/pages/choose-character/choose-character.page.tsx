@@ -6,7 +6,7 @@ import { SkyLayout } from 'layouts';
 
 import { Grid } from '@material-ui/core';
 
-import { mounteBattle } from 'utils/battle.utils';
+import { mountBattle } from 'utils/battle.utils';
 
 import { useStyles } from './choose-character.styles';
 
@@ -24,7 +24,7 @@ export default function ChooseCharacterPage() {
 
   function startBattle(character: ICharacter) {
     dispath({ type: SET_CHARACTER, data: character });
-    const battle = mounteBattle(player.gamemode, { ...player, character });
+    const battle = mountBattle(player.gamemode, { ...player, character });
     dispath({ type: INIT_BATTLE, data: battle });
     history.push('/battle/arena');
   }
