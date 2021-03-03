@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { SkyLayout } from 'layouts/sky/sky.layout';
 
@@ -16,6 +16,7 @@ import * as types from 'modules/player/store/player.types';
 
 export default function ChosseNickname() {
   const classes = useStyles();
+  const history = useHistory();
   const dispath = useDispatch();
   const player = useSelector((state: any) => state.player);
 
@@ -31,6 +32,7 @@ export default function ChosseNickname() {
                 defaultValue={player?.nick || ''}
                 value={player?.nick}
                 className={classes.input}
+                onKeyPress={e => e.key === 'Enter' && history.push('/player/choose/gamemode')}
                 onChange={e =>
                   dispath({
                     type: types.SET_NICKNAME,

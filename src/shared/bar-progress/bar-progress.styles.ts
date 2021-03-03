@@ -30,7 +30,7 @@ export const PowerBar = withStyles(() =>
     bar: {
       transition: '0.8s',
       borderRadius: 5,
-      backgroundColor: palletColors.yellowDark,
+      backgroundColor: palletColors.purple,
     },
   }),
 )(LinearProgress);
