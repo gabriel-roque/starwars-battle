@@ -45,6 +45,12 @@ function apllyAttack(receivingPlayer: IPlayer) {
   return { receivingPlayer, value: ATTACK };
 }
 
+function apllyDefeat(receivingPlayer: IPlayer) {
+  const REGENERATE_SHIELD = random(3, 6);
+  receivingPlayer.status.shield = receivingPlayer.status.shield += REGENERATE_SHIELD;
+  return { receivingPlayer, value: REGENERATE_SHIELD };
+}
+
 function mountAction(action: IActionLabel, value: number): IAction {
   return { ...mountIcon(action), value };
 }
@@ -64,6 +70,20 @@ export function turn(battle: IBattle, action: IActionLabel) {
         battle.playerA = receivingPlayer;
         battle.history?.push({ player: battle.playerB, action: mountAction(action, value) });
         battle.turn = 'playerA';
+      }
+      break;
+    }
+    case ACTIONS.DEFEAT: {
+      if (battle.turn === 'playerA') {
+        const { receivingPlayer, value } = apllyDefeat(playerA);
+        battle.playerA = receivingPlayer;
+        battle.turn = 'playerB';
+        battle.history?.push({ player: battle.playerA, action: mountAction(action, value) });
+      } else {
+        const { receivingPlayer, value } = apllyDefeat(playerB);
+        battle.playerB = receivingPlayer;
+        battle.turn = 'playerA';
+        battle.history?.push({ player: battle.playerB, action: mountAction(action, value) });
       }
       break;
     }
