@@ -20,4 +20,5 @@ export interface IAction {
   label: IActionLabel;
   color: string;
   value?: number;
+  disable?: boolean;
 }

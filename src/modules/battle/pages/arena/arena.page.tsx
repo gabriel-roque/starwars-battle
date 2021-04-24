@@ -49,9 +49,21 @@ export default function ArenaPage() {
             </Grid>
             <Grid container item xs={10} className={classes.actionArea} justify="space-between">
               <IconAction type={ACTIONS.ATTACK} onClick={() => action(battle, ACTIONS.ATTACK)} />
-              <IconAction type={ACTIONS.DEFEAT} onClick={() => action(battle, ACTIONS.DEFEAT)} />
-              <IconAction type={ACTIONS.CHARGER} onClick={() => action(battle, ACTIONS.CHARGER)} />
-              <IconAction type={ACTIONS.POWER} onClick={() => action(battle, ACTIONS.POWER)} />
+              <IconAction
+                type={ACTIONS.DEFEAT}
+                onClick={() => action(battle, ACTIONS.DEFEAT)}
+                disable={battle.playerA.status.shield >= 6}
+              />
+              <IconAction
+                type={ACTIONS.CHARGER}
+                onClick={() => action(battle, ACTIONS.CHARGER)}
+                disable={battle.playerA.status.life >= 100}
+              />
+              <IconAction
+                type={ACTIONS.POWER}
+                onClick={() => action(battle, ACTIONS.POWER)}
+                disable={battle.playerA.status.power < 8}
+              />
             </Grid>
           </Grid>
           {/* History */}
