@@ -1,4 +1,4 @@
-import { mountIcon } from 'utils';
+import { mountIcon, random } from 'utils';
 
 import { GAMEMODES, CHARACTERS, ACTIONS } from 'enums';
 import { IPlayer, ICharacter, IBattle, IActionLabel, IAction } from 'interfaces';
@@ -29,10 +29,6 @@ function shuffleAdversary(player: IPlayer): ICharacter {
   return character;
 }
 
-function random(min: number, max: number): number {
-  return min + Math.floor((max - min) * Math.random());
-}
-
 function checkShield(shield: number, hit: number) {
   return shield - hit < 0 ? 0 : shield - hit;
 }
@@ -41,6 +37,7 @@ function apllyAttack(receivingPlayer: IPlayer) {
   const ATTACK = random(2, 8);
   const SHIELD = checkShield(receivingPlayer.status.shield, ATTACK);
   receivingPlayer.status.life = receivingPlayer.status.life - (ATTACK - receivingPlayer.status.shield);
+  if (receivingPlayer.status.life >= 100) receivingPlayer.status.life = 100;
   receivingPlayer.status.shield = SHIELD;
   return { receivingPlayer, value: ATTACK };
 }
@@ -64,6 +61,10 @@ function applyCharger(receivingPlayer: IPlayer) {
   const LIFE = random(5, 10);
   receivingPlayer.status.life = receivingPlayer.status.power += LIFE;
   receivingPlayer.status.power = receivingPlayer.status.power += POWER;
+
+  if (receivingPlayer.status.life >= 100) receivingPlayer.status.life = 100;
+  if (receivingPlayer.status.power >= 100) receivingPlayer.status.power = 100;
+
   return { receivingPlayer, value: POWER + LIFE };
 }
 

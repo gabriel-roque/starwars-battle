@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -6,6 +6,7 @@ import { SkyLayout } from 'layouts';
 
 import { Grid } from '@material-ui/core';
 
+import { random } from 'utils';
 import { turn } from 'utils/battle.utils';
 
 import { useStyles } from './arena.styles';
@@ -25,6 +26,16 @@ export default function ArenaPage() {
     const resultTurn = turn(battle, action);
     dispath({ type: types.TURN_BATTLE, data: resultTurn });
   }
+
+  useEffect(() => {
+    if (battle.turn === 'playerB') {
+      const actions = ['attack', 'defeat', 'charger', 'power'];
+      const randomAttack = random(0, actions.length);
+      setTimeout(() => {
+        action(battle, actions[randomAttack]);
+      }, 1100);
+    }
+  }, [battle]);
 
   return (
     <SkyLayout>
@@ -48,21 +59,25 @@ export default function ArenaPage() {
               <Bar type="power" counter={battle.playerA.status.power} />
             </Grid>
             <Grid container item xs={10} className={classes.actionArea} justify="space-between">
-              <IconAction type={ACTIONS.ATTACK} onClick={() => action(battle, ACTIONS.ATTACK)} />
+              <IconAction
+                type={ACTIONS.ATTACK}
+                onClick={() => action(battle, ACTIONS.ATTACK)}
+                disable={battle.turn === 'playerB'}
+              />
               <IconAction
                 type={ACTIONS.DEFEAT}
                 onClick={() => action(battle, ACTIONS.DEFEAT)}
-                disable={battle.playerA.status.shield >= 6}
+                disable={battle.playerA.status.shield >= 6 || battle.turn === 'playerB'}
               />
               <IconAction
                 type={ACTIONS.CHARGER}
                 onClick={() => action(battle, ACTIONS.CHARGER)}
-                disable={battle.playerA.status.life >= 100}
+                disable={battle.playerA.status.life >= 100 || battle.turn === 'playerB'}
               />
               <IconAction
                 type={ACTIONS.POWER}
                 onClick={() => action(battle, ACTIONS.POWER)}
-                disable={battle.playerA.status.power < 8}
+                disable={battle.playerA.status.power < 8 || battle.turn === 'playerB'}
               />
             </Grid>
           </Grid>
