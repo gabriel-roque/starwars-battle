@@ -6,6 +6,7 @@ export interface IBattle {
   playerB: IPlayer;
   history?: Array<IHistory>;
   turn?: 'playerA' | 'playerB' | string;
+  winner?: IPlayer;
 }
 
 export interface IHistory {

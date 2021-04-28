@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { SkyLayout } from 'layouts';
 
@@ -20,6 +20,7 @@ import { Character, Shield, Bar, IconAction } from 'shared';
 export default function ArenaPage() {
   const classes = useStyles();
   const dispath = useDispatch();
+  const history = useHistory();
   const battle: IBattle = useSelector((state: any) => state.battle);
 
   function action(battle: IBattle, action: IActionLabel) {
@@ -35,6 +36,20 @@ export default function ArenaPage() {
         action(battle, actions[randomAttack]);
       }, 1100);
     }
+
+    if (battle.playerA.status.life <= 0) {
+      dispath({ type: types.WINNER, data: battle.playerB });
+      setTimeout(() => {
+        history.push('/battle/winner');
+      }, 500);
+    }
+
+    if (battle.playerB.status.life <= 0) {
+      dispath({ type: types.WINNER, data: battle.playerA });
+      setTimeout(() => {
+        history.push('/battle/winner');
+      }, 500);
+    }
   }, [battle]);
 
   return (
@@ -44,7 +59,7 @@ export default function ArenaPage() {
           {battle.turn === 'playerA' ? (
             <h1 className={classes.title}>Your turn!</h1>
           ) : (
-            <h1 className={classes.title}>Your opponent</h1>
+            <h1 className={classes.title}>Opponent turn!</h1>
           )}
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>

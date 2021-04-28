@@ -7,6 +7,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...action.data };
     case types.TURN_BATTLE:
       return { ...action.data };
+    case types.WINNER:
+      return { ...state, winner: action.data };
     default:
       return state;
   }
