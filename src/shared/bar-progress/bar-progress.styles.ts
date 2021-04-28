@@ -1,4 +1,4 @@
-import { createStyles, LinearProgress, withStyles, makeStyles } from '@material-ui/core';
+import { createStyles, LinearProgress, withStyles, makeStyles, Theme } from '@material-ui/core';
 
 import { palletColors } from 'config';
 
@@ -24,9 +24,18 @@ const COMMON_CSS = {
   },
 };
 
-export const PowerBar = withStyles(() =>
+export const PowerBar = withStyles((theme: Theme) =>
   createStyles({
     ...COMMON_CSS,
+    root: {
+      ...COMMON_CSS.root,
+      [theme.breakpoints.only('lg')]: {
+        height: 10,
+      },
+      [theme.breakpoints.only('sm')]: {
+        height: 8,
+      },
+    },
     bar: {
       transition: '0.8s',
       borderRadius: 5,
@@ -35,9 +44,18 @@ export const PowerBar = withStyles(() =>
   }),
 )(LinearProgress);
 
-export const LifeBar = withStyles(() =>
+export const LifeBar = withStyles((theme: Theme) =>
   createStyles({
     ...COMMON_CSS,
+    root: {
+      ...COMMON_CSS.root,
+      [theme.breakpoints.only('lg')]: {
+        height: 10,
+      },
+      [theme.breakpoints.only('sm')]: {
+        height: 8,
+      },
+    },
     bar: {
       transition: '0.8s',
       borderRadius: 5,

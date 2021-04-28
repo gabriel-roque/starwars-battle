@@ -6,6 +6,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
   image: {
     height: 250,
     width: 250,
+    [theme.breakpoints.only('lg')]: {
+      height: 180,
+      width: 180,
+    },
+    [theme.breakpoints.only('sm')]: {
+      height: 100,
+      width: 100,
+    },
     borderRadius: 150,
     border: '5px solid white',
     backgroundSize: 'cover !important',
@@ -27,6 +35,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
     width: 150,
     textAlign: 'center',
     backgroundColor: palletColors.cyan,
+    [theme.breakpoints.down('lg')]: {
+      fontSize: 15,
+      width: 120,
+    },
   },
   nick: {
     padding: '5px 15px',
@@ -34,5 +46,21 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 11,
     color: 'white',
     backgroundColor: palletColors.cyan,
+  },
+  nickSnap: {
+    [theme.breakpoints.only('sm')]: {
+      alignContent: 'space-around',
+    },
+  },
+  characterSnap: {
+    [theme.breakpoints.only('sm')]: {
+      alignContent: 'space-around',
+    },
+  },
+  area: {
+    marginTop: 20,
+    [theme.breakpoints.only('sm')]: {
+      alignContent: 'center',
+    },
   },
 }));

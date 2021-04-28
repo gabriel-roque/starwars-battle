@@ -1,14 +1,18 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
 import { palletColors } from 'config';
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((theme: Theme) => ({
   area: {
     width: '80%',
     height: '90%',
     backgroundColor: palletColors.cyan,
     borderRadius: 15,
     padding: '20px 0',
+    [theme.breakpoints.only('lg')]: {
+      height: '70%',
+    },
+    overflowY: 'scroll',
   },
   item: {
     backgroundColor: '#C4C4C4',

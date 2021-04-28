@@ -64,7 +64,7 @@ export default function ArenaPage() {
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           {/* PlayerA */}
-          <Grid container item justify="center" xs={3} alignContent="flex-start">
+          <Grid container item justify="center" sm={6} md={3} lg={4} alignContent="flex-start">
             <Grid container item xs={10}>
               <Shield counter={battle.playerA.status.shield} />
             </Grid>
@@ -73,7 +73,7 @@ export default function ArenaPage() {
               <Bar type="life" counter={battle.playerA.status.life} />
               <Bar type="power" counter={battle.playerA.status.power} />
             </Grid>
-            <Grid container item xs={10} className={classes.actionArea} justify="space-between">
+            <Grid container item sm={10} md={8} lg={10} className={classes.actionArea} justify="space-between">
               <IconAction
                 type={ACTIONS.ATTACK}
                 onClick={() => action(battle, ACTIONS.ATTACK)}
@@ -97,16 +97,16 @@ export default function ArenaPage() {
             </Grid>
           </Grid>
           {/* History */}
-          <Grid container item justify="center" xs={3}>
+          {/* <Grid container item justify="center" alignContent="center" md={5} lg={4}>
             <BattleHistory />
-          </Grid>
+          </Grid> */}
           {/* PlayerB */}
-          <Grid container item justify="center" xs={3} alignContent="flex-start">
+          <Grid container item justify="center" xs={6} md={3} lg={4} alignContent="flex-start">
             <Grid container item xs={10}>
               <Shield counter={battle.playerB.status.shield} />
             </Grid>
             <Character character={battle.playerB.character} player={battle.playerB} noPointer />
-            <Grid container item xs={10}>
+            <Grid container item sm={10}>
               <Bar type="life" counter={battle.playerB.status.life} />
               <Bar type="power" counter={battle.playerB.status.power} />
             </Grid>

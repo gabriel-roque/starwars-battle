@@ -1,11 +1,22 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((theme: Theme) => ({
   icon: {
     color: (props?: any) => props?.color,
     fontSize: 20,
     padding: 20,
     transition: '0.5s',
+    [theme.breakpoints.only('lg')]: {
+      fontSize: 15,
+      padding: 15,
+    },
+    [theme.breakpoints.only('md')]: {
+      padding: 10,
+    },
+    [theme.breakpoints.only('sm')]: {
+      fontSize: 10,
+      padding: 8,
+    },
   },
   circle: {
     border: (props?: any) => `solid 5px ${props?.color}`,
@@ -20,6 +31,9 @@ export const useStyles = makeStyles(() => ({
   text: {
     color: 'white',
     userSelect: 'none',
+    [theme.breakpoints.only('md')]: {
+      marginBottom: 10,
+    },
   },
   area: {
     width: 70,
