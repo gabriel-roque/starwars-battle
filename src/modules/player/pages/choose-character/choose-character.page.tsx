@@ -38,14 +38,14 @@ export default function ChooseCharacterPage() {
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           {player.side === SIDES.LIGHT
             ? CHARACTERS.light.map((character, i) => (
-                <Grid container item xs={3} key={i}>
+                <Grid container item md={4} lg={3} key={i}>
                   <div onClick={() => startBattle(character)}>
                     <Character character={character} />
                   </div>
                 </Grid>
               ))
             : CHARACTERS.dark.map((character, i) => (
-                <Grid container item xs={3} key={i}>
+                <Grid container item md={4} lg={3} key={i}>
                   <div onClick={() => startBattle(character)}>
                     <Character character={character} />
                   </div>

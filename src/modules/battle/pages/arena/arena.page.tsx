@@ -64,7 +64,7 @@ export default function ArenaPage() {
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
           {/* PlayerA */}
-          <Grid container item justify="center" sm={6} md={3} lg={4} alignContent="flex-start">
+          <Grid container item justify="center" sm={6} md={3} lg={4} xl={3} alignContent="flex-start">
             <Grid container item xs={10}>
               <Shield counter={battle.playerA.status.shield} />
             </Grid>
@@ -97,11 +97,11 @@ export default function ArenaPage() {
             </Grid>
           </Grid>
           {/* History */}
-          {/* <Grid container item justify="center" alignContent="center" md={5} lg={4}>
+          <Grid container item justify="center" alignContent="center" md={5} lg={4} xl={3}>
             <BattleHistory />
-          </Grid> */}
+          </Grid>
           {/* PlayerB */}
-          <Grid container item justify="center" xs={6} md={3} lg={4} alignContent="flex-start">
+          <Grid container item justify="center" xs={6} md={3} lg={4} xl={3} alignContent="flex-start">
             <Grid container item xs={10}>
               <Shield counter={battle.playerB.status.shield} />
             </Grid>

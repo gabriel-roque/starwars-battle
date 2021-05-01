@@ -23,7 +23,7 @@ export default function ChooseSidePage() {
           <h1 className={classes.title}>Select your side</h1>
         </Grid>
         <Grid container item justify="center" alignContent="center" style={{ height: '80%' }}>
-          <Grid container item md={5} lg={4}>
+          <Grid container item xs={5} md={5} lg={4}>
             <Link
               className={classes.link}
               to="/player/choose"
@@ -32,7 +32,7 @@ export default function ChooseSidePage() {
               <LightSide />
             </Link>
           </Grid>
-          <Grid container item md={5} lg={4}>
+          <Grid container item xs={5} md={5} lg={4}>
             <Link
               className={classes.link}
               to="/player/choose"

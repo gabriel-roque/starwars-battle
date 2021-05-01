@@ -6,8 +6,12 @@ import { palletColors } from 'config';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   image: {
+    padding: theme.spacing(1),
     [theme.breakpoints.only('md')]: {
       width: 350,
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 200,
     },
     height: 280,
     width: 450,

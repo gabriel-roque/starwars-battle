@@ -9,6 +9,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down('lg')]: {
       height: 400,
     },
+    [theme.breakpoints.down('sm')]: {
+      height: 150,
+    },
+    // [theme.breakpoints.only('xs')]: {
+    //   height: 150,
+    // },
     height: 600,
     width: '100%',
     margin: 10,
