@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-   <a href="#"><img src="https://raw.githubusercontent.com/gabriel-roque/design/master/btn-open-app.png" width="200"></a>
+   <a href="https://starwarsbtlgame.netlify.app/"><img src="https://raw.githubusercontent.com/gabriel-roque/design/master/btn-open-app.png" width="200"></a>
 </p>
 
 <p align="center">
