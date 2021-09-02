@@ -27,6 +27,13 @@ $ git clone https://github.com/gabriel-roque/starwars-battle
 $ npm i && npm start
 ```
 
+## 🖼️ Previews
+
+<img src="./.github/img/side.png">
+<img src="./.github/img/dark-side.png">
+<img src="./.github/img/light-side.png">
+<img src="./.github/img/battle.png">
+
 ## 👤 Authors
 
 <p align="center">
